@@ -1,112 +1,75 @@
-# Chama Management Platform
+# ChamaLink - Digital Chama Management Platform
 
-A comprehensive web application for managing investment groups (Chamas) in Kenya, featuring M-Pesa integration for seamless financial transactions.
+## Project Description
 
-## Overview
+**Market Need**: Traditional chamas (investment groups) in Kenya rely on manual record-keeping, cash transactions, and in-person meetings, leading to inefficiencies, disputes over contributions, and limited financial transparency. With Kenya's mobile money adoption at over 80%, there's a significant opportunity to digitize chama operations.
 
-The Chama Management Platform empowers groups to digitize their financial operations, track contributions, manage loans, and achieve collective financial goals. Built specifically for the Kenyan market with native M-Pesa integration.
+**Project Value**: ChamaLink transforms how Kenyan investment groups operate by providing a comprehensive digital platform that automates contribution tracking, integrates M-Pesa payments, manages loans, and offers real-time financial insights. This reduces administrative burden, increases transparency, and enables chamas to scale their operations effectively.
 
-## Features
+**Key Benefits**:
+- Automated M-Pesa integration for seamless contributions
+- Real-time financial tracking and reporting
+- Digital loan management with automated calculations
+- Goal setting and progress visualization
+- Reduced disputes through transparent record-keeping
+- Mobile-first design for accessibility
 
-### 🏦 Chama Management
-- **Group Setup**: Create and configure chama groups with custom rules
-- **Member Management**: Add, remove, and manage member profiles
-- **Role-based Access**: Admin, treasurer, secretary, and member roles
-- **Group Settings**: Customize contribution schedules, meeting frequencies, and policies
+## Target Users
 
-### 💰 Financial Management
-- **M-Pesa Integration**: Seamless mobile money transactions
-- **Contribution Tracking**: Automated tracking of member contributions
-- **Payment Reminders**: SMS and email notifications for due payments
-- **Financial Reports**: Detailed financial statements and analytics
-- **Multi-currency Support**: KES primary with USD/EUR options
+### Primary Users
+- **Chama Administrators**: Group leaders who manage day-to-day operations, track contributions, and oversee financial decisions
+- **Chama Members**: Individual participants who make contributions, apply for loans, and track their financial progress
+- **Chama Treasurers**: Financial officers responsible for managing group funds, loan approvals, and financial reporting
 
-### 🎯 Goal Setting & Tracking
-- **Group Goals**: Set collective savings targets
-- **Individual Goals**: Personal savings milestones within the group
-- **Progress Visualization**: Charts and progress bars
-- **Milestone Celebrations**: Automated notifications for achieved goals
+### User Demographics
+- **Geographic**: Kenya (with potential expansion to East Africa)
+- **Age**: 25-55 years old
+- **Income**: Middle to lower-middle class
+- **Tech Proficiency**: Basic to intermediate smartphone users
+- **Group Size**: Chamas with 5-50 members
 
-### 📊 Loan Management
-- **Loan Applications**: Digital loan request process
-- **Approval Workflow**: Multi-level approval system
-- **Payment Tracking**: Automated loan repayment monitoring
-- **Interest Calculations**: Flexible interest rate configurations
-- **Default Management**: Late payment alerts and penalties
+### Use Cases
+- **Small Business Chamas**: Groups saving for business investments
+- **Housing Chamas**: Members pooling funds for property purchases
+- **Education Chamas**: Parents saving for children's school fees
+- **Emergency Fund Chamas**: Groups creating safety nets for members
 
-### 📱 Communication
-- **In-app Messaging**: Group chat and private messaging
-- **Meeting Scheduler**: Plan and track group meetings
-- **Announcements**: Broadcast important updates
-- **Document Sharing**: Share meeting minutes and financial reports
-
-### 📈 Analytics & Reporting
-- **Dashboard**: Real-time group financial overview
-- **Member Performance**: Individual contribution analytics
-- **Financial Trends**: Historical data visualization
-- **Export Options**: PDF and Excel report generation
-
-## Technology Stack
-
-### Frontend
-- **Framework**: React 18+ with TypeScript
-- **UI Library**: Material-UI or Chakra UI
-- **State Management**: Redux Toolkit
-- **Charts**: Recharts or Chart.js
-- **Mobile Responsive**: Progressive Web App (PWA)
-
-### Backend
-- **Runtime**: Node.js with Express.js
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: JWT with refresh tokens
-- **File Storage**: AWS S3 or Cloudinary
-- **Email Service**: SendGrid or AWS SES
-
-### Payment Integration
-- **M-Pesa**: Safaricom Daraja API
-- **Payment Processing**: Stripe (for card payments)
-- **Webhook Handling**: Real-time payment notifications
-
-### Infrastructure
-- **Hosting**: Vercel (Frontend) + Railway/Heroku (Backend)
-- **Database**: Supabase or AWS RDS
-- **CDN**: Cloudflare
-- **Monitoring**: Sentry for error tracking
-
-## Getting Started
+## How to Run the Project
 
 ### Prerequisites
 - Node.js 18+ and npm/yarn
 - PostgreSQL database
 - M-Pesa developer account (Safaricom Daraja API)
-- Environment variables configured
 
-### Installation
+### Quick Start
 
-1. **Clone the repository**
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/chama-app.git
-   cd chama-app
+   git clone https://github.com/allansh/chamalink.git
+   cd chamalink
    ```
 
-2. **Install dependencies**
+2. **Install Dependencies**
    ```bash
-   # Install backend dependencies
+   # Backend setup
    cd backend
    npm install
    
-   # Install frontend dependencies
+   # Frontend setup
    cd ../frontend
    npm install
    ```
 
-3. **Environment Setup**
+3. **Environment Configuration**
    ```bash
-   # Backend environment variables
+   # Copy environment templates
    cp backend/.env.example backend/.env
-   
-   # Frontend environment variables
    cp frontend/.env.example frontend/.env
+   
+   # Update with your credentials:
+   # - Database connection string
+   # - M-Pesa API credentials
+   # - JWT secrets
    ```
 
 4. **Database Setup**
@@ -119,173 +82,112 @@ The Chama Management Platform empowers groups to digitize their financial operat
 
 5. **Start Development Servers**
    ```bash
-   # Terminal 1 - Backend
+   # Terminal 1 - Backend (Port 3001)
    cd backend
    npm run dev
    
-   # Terminal 2 - Frontend
+   # Terminal 2 - Frontend (Port 3000)
    cd frontend
    npm start
    ```
 
+6. **Access the Application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:3001
+   - API Documentation: http://localhost:3001/api-docs
+
 ### Environment Variables
 
-#### Backend (.env)
+**Backend (.env)**
 ```env
-DATABASE_URL="postgresql://username:password@localhost:5432/chama_db"
-JWT_SECRET="your-jwt-secret-key"
-JWT_REFRESH_SECRET="your-refresh-secret-key"
-MPESA_CONSUMER_KEY="your-mpesa-consumer-key"
-MPESA_CONSUMER_SECRET="your-mpesa-consumer-secret"
-MPESA_SHORTCODE="your-business-shortcode"
-MPESA_PASSKEY="your-mpesa-passkey"
-SENDGRID_API_KEY="your-sendgrid-key"
-AWS_ACCESS_KEY_ID="your-aws-key"
-AWS_SECRET_ACCESS_KEY="your-aws-secret"
+DATABASE_URL="postgresql://user:password@localhost:5432/chamalink"
+JWT_SECRET="your-jwt-secret"
+MPESA_CONSUMER_KEY="your-mpesa-key"
+MPESA_CONSUMER_SECRET="your-mpesa-secret"
+MPESA_SHORTCODE="174379"
+MPESA_PASSKEY="your-passkey"
 ```
 
-#### Frontend (.env)
+**Frontend (.env)**
 ```env
 REACT_APP_API_URL="http://localhost:3001/api"
-REACT_APP_MPESA_CONSUMER_KEY="your-mpesa-consumer-key"
-REACT_APP_ENVIRONMENT="development"
+REACT_APP_MPESA_CONSUMER_KEY="your-mpesa-key"
 ```
 
-## API Documentation
+## Team Members
 
-### Authentication Endpoints
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/refresh` - Refresh access token
-- `POST /api/auth/logout` - User logout
+| Name | Role | GitHub Handle | Responsibilities |
+|------|------|---------------|------------------|
+| **Allan Sharad** | Lead Developer & Co-Founder | [@allansh](https://github.com/allansh) | Backend development, M-Pesa integration, database design |
+| **Iqbal Sharif** | Frontend Developer & Co-Founder | [@iqbalsharif](https://github.com/iqbalsharif) | UI/UX design, React development, mobile responsiveness |
 
-### Chama Management
-- `GET /api/chamas` - List user's chamas
-- `POST /api/chamas` - Create new chama
-- `GET /api/chamas/:id` - Get chama details
-- `PUT /api/chamas/:id` - Update chama settings
-- `DELETE /api/chamas/:id` - Delete chama
+### Contact Information
+- **Project Lead**: Allan Sharad (allan@chamalink.co.ke)
+- **Technical Lead**: Iqbal Sharif (iqbal@chamalink.co.ke)
 
-### Member Management
-- `GET /api/chamas/:id/members` - List chama members
-- `POST /api/chamas/:id/members` - Add new member
-- `PUT /api/chamas/:id/members/:memberId` - Update member
-- `DELETE /api/chamas/:id/members/:memberId` - Remove member
+## Project Timeline
 
-### Payment & Contributions
-- `POST /api/payments/mpesa/stk-push` - Initiate M-Pesa payment
-- `POST /api/payments/mpesa/callback` - M-Pesa callback handler
-- `GET /api/contributions/:chamaId` - Get contribution history
-- `POST /api/contributions` - Record manual contribution
+### Phase 1: MVP Development (Q1 2025) - COMPLETED
+**Duration**: January - March 2025
+- [x] Project setup and architecture
+- [x] User authentication system
+- [x] Basic chama creation and management
+- [x] Member management functionality
+- [x] M-Pesa STK Push integration
+- [x] Contribution tracking
 
-### Loans
-- `GET /api/loans/:chamaId` - List chama loans
-- `POST /api/loans` - Create loan application
-- `PUT /api/loans/:loanId/approve` - Approve loan
-- `POST /api/loans/:loanId/payments` - Record loan payment
-
-## Database Schema
-
-### Key Tables
-- **users**: User account information
-- **chamas**: Chama group details
-- **chama_members**: Member-chama relationships
-- **contributions**: Payment records
-- **loans**: Loan applications and details
-- **loan_payments**: Loan repayment tracking
-- **goals**: Group and individual goals
-- **transactions**: All financial transactions
-
-## Deployment
-
-### Production Build
-```bash
-# Build frontend
-cd frontend
-npm run build
-
-# Build backend
-cd backend
-npm run build
-```
-
-### Deployment Checklist
-- [ ] Environment variables configured
-- [ ] Database migrations run
-- [ ] M-Pesa webhook URLs updated
-- [ ] SSL certificates installed
-- [ ] Domain DNS configured
-- [ ] Monitoring tools setup
-
-## Security Features
-
-- **Authentication**: JWT-based with refresh tokens
-- **Authorization**: Role-based access control
-- **Data Encryption**: Sensitive data encrypted at rest
-- **API Rate Limiting**: Prevent abuse and DDoS
-- **Input Validation**: Comprehensive request validation
-- **Audit Logging**: Track all financial transactions
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Standards
-- TypeScript for type safety
-- ESLint and Prettier for code formatting
-- Jest for unit testing
-- Cypress for end-to-end testing
-
-## Testing
-
-```bash
-# Run backend tests
-cd backend
-npm test
-
-# Run frontend tests
-cd frontend
-npm test
-
-# Run e2e tests
-npm run test:e2e
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-- **Documentation**: [docs.chamaapp.com](https://docs.chamaapp.com)
-- **Email Support**: support@chamaapp.com
-- **Community**: [Discord Server](https://discord.gg/chamaapp)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/chama-app/issues)
-
-## Roadmap
-
-### Phase 1 (MVP) ✅
-- Basic chama creation and management
-- M-Pesa integration
-- Member management
-- Contribution tracking
-
-### Phase 2 (Q2 2025)
+### Phase 2: Core Features (Q2 2025) - IN PROGRESS
+**Duration**: April - June 2025
 - [ ] Loan management system
-- [ ] Advanced reporting
-- [ ] Mobile app (React Native)
-- [ ] Multi-language support (Swahili)
+- [ ] Payment reminders and notifications
+- [ ] Financial reporting dashboard
+- [ ] Goal setting and tracking
+- [ ] Mobile app development (React Native)
+- [ ] Beta testing with 10 chamas
 
-### Phase 3 (Q3 2025)
+### Phase 3: Advanced Features (Q3 2025) - PLANNED
+**Duration**: July - September 2025
+- [ ] Advanced analytics and insights
+- [ ] Multi-chama management
 - [ ] Investment tracking
-- [ ] Integration with banks
+- [ ] Integration with banks and SACCOs
+- [ ] Automated loan calculations
+- [ ] Public launch and marketing
+
+### Phase 4: Scale & Expansion (Q4 2025) - PLANNED
+**Duration**: October - December 2025
 - [ ] AI-powered financial insights
-- [ ] Micro-insurance products
+- [ ] Multi-language support (Swahili)
+- [ ] Expansion to Uganda and Tanzania
+- [ ] Partnership with financial institutions
+- [ ] Advanced security features
+- [ ] 1000+ active chamas target
+
+### Key Milestones
+- **MVP Launch**: March 31, 2025
+- **Beta Release**: June 30, 2025
+- **Public Launch**: September 30, 2025
+- **Regional Expansion**: December 31, 2025
+
+## Link to Project Board
+
+**Project Management**: [GitHub Project Board](https://github.com/users/allansh/projects/1)
+
+### Board Structure
+- **Backlog**: Features and improvements waiting to be prioritized
+- **Todo**: Items ready for development in current sprint
+- **In Progress**: Actively being worked on
+- **Review**: Completed work awaiting code review
+- **Done**: Completed and deployed features
+
+### Sprint Schedule
+- **Sprint Duration**: 2 weeks
+- **Sprint Planning**: Every other Monday
+- **Sprint Review**: Every other Friday
+- **Daily Standups**: Monday, Wednesday, Friday (virtual)
 
 ---
 
-**Built with ❤️ for the Kenyan chama community**
+
+
+**Built for the Kenyan chama community**
