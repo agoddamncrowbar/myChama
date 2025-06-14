@@ -50,16 +50,16 @@ Will update once code is ready
 
 ## Project Timeline
 
-### Phase 1: MVP Development (Q1 2025) - COMPLETED
+### Phase 1: MVP Development 
 **Duration**: January - March 2025
-- [x] Project setup and architecture
-- [x] User authentication system
-- [x] Basic chama creation and management
-- [x] Member management functionality
-- [x] M-Pesa STK Push integration
-- [x] Contribution tracking
+- [ ] Project setup and architecture
+- [ ] User authentication system
+- [ ] Basic chama creation and management
+- [ ] Member management functionality
+- [ ] M-Pesa STK Push integration
+- [ ] Contribution tracking
 
-### Phase 2: Core Features (Q2 2025) - IN PROGRESS
+### Phase 2: Core Features 
 **Duration**: April - June 2025
 - [ ] Loan management system
 - [ ] Payment reminders and notifications
@@ -68,7 +68,7 @@ Will update once code is ready
 - [ ] Mobile app development (React Native)
 - [ ] Beta testing with 10 chamas
 
-### Phase 3: Advanced Features (Q3 2025) - PLANNED
+### Phase 3: Advanced Features 
 **Duration**: July - September 2025
 - [ ] Advanced analytics and insights
 - [ ] Multi-chama management
@@ -77,7 +77,7 @@ Will update once code is ready
 - [ ] Automated loan calculations
 - [ ] Public launch and marketing
 
-### Phase 4: Scale & Expansion (Q4 2025) - PLANNED
+### Phase 4: Scale & Expansion 
 **Duration**: October - December 2025
 - [ ] AI-powered financial insights
 - [ ] Multi-language support (Swahili)
@@ -86,15 +86,11 @@ Will update once code is ready
 - [ ] Advanced security features
 - [ ] 1000+ active chamas target
 
-### Key Milestones
-- **MVP Launch**: March 31, 2025
-- **Beta Release**: June 30, 2025
-- **Public Launch**: September 30, 2025
-- **Regional Expansion**: December 31, 2025
+
 
 ## Link to Project Board
 
-**Project Management**: [GitHub Project Board](https://github.com/users/allansh/projects/1)
+**Project Management**: [GitHub Project Board](https://github.com/users/agoddamncrowbar/projects/2)
 
 ### Board Structure
 - **Backlog**: Features and improvements waiting to be prioritized
