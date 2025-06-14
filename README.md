@@ -1,10 +1,10 @@
-# ChamaLink - Digital Chama Management Platform
+# MyChama - Digital Chama Management Platform
 
 ## Project Description
 
 **Market Need**: Traditional chamas (investment groups) in Kenya rely on manual record-keeping, cash transactions, and in-person meetings, leading to inefficiencies, disputes over contributions, and limited financial transparency. With Kenya's mobile money adoption at over 80%, there's a significant opportunity to digitize chama operations.
 
-**Project Value**: ChamaLink transforms how Kenyan investment groups operate by providing a comprehensive digital platform that automates contribution tracking, integrates M-Pesa payments, manages loans, and offers real-time financial insights. This reduces administrative burden, increases transparency, and enables chamas to scale their operations effectively.
+**Project Value**: MyChama transforms how Kenyan investment groups operate by providing a comprehensive digital platform that automates contribution tracking, integrates M-Pesa payments, manages loans, and offers real-time financial insights. This reduces administrative burden, increases transparency, and enables chamas to scale their operations effectively.
 
 **Key Benefits**:
 - Automated M-Pesa integration for seamless contributions
@@ -45,8 +45,8 @@ Will update once code is ready
 | **Iqbal Sharif** | Frontend Developer & Co-Founder | [@iqbalsharif](https://github.com/iqbalsharif) | UI/UX design, React development, mobile responsiveness |
 
 ### Contact Information
-- **Project Lead**: Allan Sharad (allan@chamalink.co.ke)
-- **Technical Lead**: Iqbal Sharif (iqbal@chamalink.co.ke)
+- **Project Lead**: Allan Sharad (allan@MyChama.co.ke)
+- **Technical Lead**: Iqbal Sharif (iqbal@MyChama.co.ke)
 
 ## Project Timeline
 
