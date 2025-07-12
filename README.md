@@ -46,7 +46,7 @@ Will update once code is ready
 
 ### Contact Information
 - **Project Lead**: Allan Sharad (allan@MyChama.co.ke)
-- **Technical Lead**: Iqbal Sharif (iqbal@MyChama.co.ke)
+- **Team member**: Iqbal Sharif (iqbal@MyChama.co.ke)
 
 ## Project Timeline
 
