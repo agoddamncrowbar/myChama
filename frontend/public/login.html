@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MyChama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'african-orange': {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c'
+            },
+            'african-green': {
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-image: url('/assets/bg1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .backdrop {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="backdrop min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="max-w-md w-full">
+      <!-- Header -->
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-gradient-to-r from-african-orange-500 to-african-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-white font-bold text-2xl">MC</span>
+        </div>
+        <h2 class="text-3xl font-bold text-white mb-2">Welcome Back</h2>
+        <p class="text-gray-200">Sign in to your MyChama account</p>
+      </div>
+
+      <!-- Login Form -->
+      <div class="bg-white rounded-2xl shadow-2xl p-8">
+        <!-- Error Message -->
+        <div id="error-message" class="text-red-600 text-sm mb-4 hidden bg-red-50 border border-red-200 rounded-lg p-3"></div>
+        
+        <form id="login-form" class="space-y-4">
+          <!-- Phone Number -->
+          <div>
+            <label for="phone_number" class="block text-sm font-semibold text-african-green-800 mb-1">Phone Number</label>
+            <input 
+              type="text"
+              id="phone_number"
+              name="phone_number"
+              placeholder="254XXXXXXXXX"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"
+            >
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block text-sm font-semibold text-african-green-800 mb-1">Password</label>
+            <input 
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"
+              placeholder="Enter your password"
+            >
+          </div>
+
+          <!-- Forgot Password Link -->
+          <div class="text-right">
+            <a href="#" class="text-sm text-african-orange-600 hover:text-african-orange-700 hover:underline">
+              Forgot your password?
+            </a>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="w-full bg-african-orange-500 hover:bg-african-orange-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+          >
+            Sign In
+          </button>
+
+          <!-- Sign Up Link -->
+          <div class="text-center pt-4 border-t border-gray-200">
+            <span class="text-gray-600">Don't have an account? </span>
+            <a href="/signup" class="text-african-green-600 hover:text-african-green-700 font-semibold">
+              Sign Up
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Back to Home -->
+      <div class="text-center mt-6">
+        <a href="/" class="text-white hover:text-gray-200 font-medium">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

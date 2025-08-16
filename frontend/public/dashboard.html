@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyChama - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'african-orange': {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c'
+            },
+            'african-green': {
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      min-height: 100vh;
+    }
+    .card-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    }
+    .stats-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      border-left: 4px solid;
+    }
+    .chama-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      transition: all 0.3s ease;
+    }
+    .chama-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <header class="card-gradient rounded-2xl shadow-lg p-6 mb-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 md:mb-0">
+          <div class="w-12 h-12 bg-gradient-to-r from-african-orange-500 to-african-green-500 rounded-full flex items-center justify-center mr-4">
+            <span class="text-white font-bold text-xl">MC</span>
+          </div>
+          <h1 class="text-3xl font-bold bg-gradient-to-r from-african-orange-600 to-african-green-600 bg-clip-text text-transparent">
+            MyChama Dashboard
+          </h1>
+        </div>
+        <nav class="flex gap-6 text-sm md:text-base">
+          <a href="/dashboard" class="text-african-orange-600 font-semibold hover:text-african-orange-700 transition-colors">Dashboard</a>
+          <a href="/profile" class="text-gray-600 hover:text-african-green-600 transition-colors">Profile</a>
+          <a href="/chamas" class="text-gray-600 hover:text-african-green-600 transition-colors">My Chamas</a>
+          <a href="javascript:logout();" id="logout-btn" class="text-red-500 hover:text-red-600 font-medium transition-colors">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Welcome Message -->
+    <section class="card-gradient rounded-2xl shadow-lg p-8 mb-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-3">
+          Welcome back, <span id="user-name" class="text-african-orange-600"></span>! 🎉
+        </h2>
+        <p class="text-gray-600 text-lg">Ready to manage your Chamas and grow your savings together</p>
+      </div>
+    </section>
+
+    <!-- Dashboard Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+      <div class="stats-card border-l-african-green-500 rounded-2xl shadow-lg p-8">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-2">My Chamas</h3>
+            <p id="chama-count" class="text-4xl font-bold text-african-green-600">0</p>
+          </div>
+          <div class="w-16 h-16 bg-african-green-100 rounded-full flex items-center justify-center">
+            <span class="text-african-green-600 text-2xl">👥</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-card border-l-african-orange-500 rounded-2xl shadow-lg p-8">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-2">Total Contributions</h3>
+            <p id="total-contributions" class="text-4xl font-bold text-african-orange-600">KES 0</p>
+          </div>
+          <div class="w-16 h-16 bg-african-orange-100 rounded-full flex items-center justify-center">
+            <span class="text-african-orange-600 text-2xl">💰</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="card-gradient rounded-2xl shadow-lg p-8 mb-10">
+      <h3 class="text-2xl font-bold text-gray-800 mb-6">Quick Actions</h3>
+      <div class="flex flex-wrap gap-4">
+        <button 
+          id="toggle-create-chama"
+          class="bg-gradient-to-r from-african-orange-500 to-african-orange-600 hover:from-african-orange-600 hover:to-african-orange-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105">
+          🏗️ Create a Chama
+        </button>
+        <button 
+          id="toggle-join-chama"
+          class="bg-gradient-to-r from-african-green-500 to-african-green-600 hover:from-african-green-600 hover:to-african-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105">
+          🤝 Join a Chama
+        </button>
+      </div>
+    </div>
+
+    <!-- Create Chama Form -->
+    <form id="create-chama-form" class="card-gradient rounded-2xl shadow-lg p-8 mb-10 space-y-6">
+      <div class="border-b border-gray-200 pb-4">
+        <h3 class="text-2xl font-bold text-gray-800 flex items-center">
+          🏗️ Create a New Chama
+        </h3>
+        <p class="text-gray-600 mt-2">Set up your savings group with custom rules and guidelines</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-semibold text-african-green-800 mb-2">Chama Name</label>
+          <input name="name" placeholder="e.g., Unity Savings Group" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-african-green-800 mb-2">Monthly Contribution</label>
+          <input name="monthly_contribution" type="number" placeholder="5000" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+        </div>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-semibold text-african-green-800 mb-2">Description</label>
+        <input name="description" placeholder="Brief description of your Chama's purpose"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-semibold text-african-green-800 mb-2">Guidelines</label>
+        <input name="guidelines" placeholder="Rules and guidelines for members"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-semibold text-african-green-800 mb-2">Join Code (Optional)</label>
+        <input name="join_code" placeholder="Custom join code for your Chama"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+      </div>
+      
+      <div class="space-y-4">
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" name="is_open_to_join" class="w-5 h-5 text-african-orange-500 rounded focus:ring-african-orange-400">
+          <span class="text-gray-700 font-medium">Allow anyone to join directly</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" name="requires_approval" class="w-5 h-5 text-african-green-500 rounded focus:ring-african-green-400">
+          <span class="text-gray-700 font-medium">Require approval to join</span>
+        </label>
+      </div>
+
+      <button type="submit"
+        class="w-full md:w-auto bg-gradient-to-r from-african-orange-500 to-african-orange-600 hover:from-african-orange-600 hover:to-african-orange-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200">
+        Create Chama
+      </button>
+    </form>
+
+    <!-- Join Chama Form -->
+    <form id="join-chama-form" class="card-gradient rounded-2xl shadow-lg p-8 mb-10 space-y-6">
+      <div class="border-b border-gray-200 pb-4">
+        <h3 class="text-2xl font-bold text-gray-800 flex items-center">
+          🤝 Join an Existing Chama
+        </h3>
+        <p class="text-gray-600 mt-2">Connect with a savings group and start contributing</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-semibold text-african-green-800 mb-2">Chama ID</label>
+          <input name="chama_id" type="number" placeholder="Enter Chama ID" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-african-green-800 mb-2">Your Role</label>
+          <select name="role" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none">
+            <option value="member">Member</option>
+            <option value="secretary">Secretary</option>
+            <option value="treasurer">Treasurer</option>
+          </select>
+        </div>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-semibold text-african-green-800 mb-2">Join Code</label>
+        <input name="join_code" placeholder="Enter join code (if required)"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-african-orange-400 focus:border-transparent outline-none"/>
+      </div>
+
+      <button type="submit"
+        class="w-full md:w-auto bg-gradient-to-r from-african-green-500 to-african-green-600 hover:from-african-green-600 hover:to-african-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200">
+        Join Chama
+      </button>
+    </form>
+
+    <!-- User Chamas -->
+    <div class="card-gradient rounded-2xl shadow-lg p-8 mb-10">
+      <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        👥 My Chamas
+      </h3>
+      <div id="user-chamas" class="space-y-6">
+        <!-- Populated by JS -->
+        <div class="text-center py-12 text-gray-500">
+          <span class="text-6xl mb-4 block">🏦</span>
+          <p class="text-lg">No Chamas yet. Create one or join an existing group to get started!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="js/dash.js"></script>
+  <script src="js/create-chama.js"></script>
+  <script src="js/join-chama.js"></script>
+</body>
+</html>

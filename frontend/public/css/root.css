@@ -1,0 +1,423 @@
+/* African Theme CSS - MyChama Website */
+/* Add this to your public/css/styles.css file */
+
+/* Custom Color Variables */
+:root {
+  /* African Orange Palette */
+  --african-orange-50: #fff7ed;
+  --african-orange-100: #ffedd5;
+  --african-orange-200: #fed7aa;
+  --african-orange-300: #fdba74;
+  --african-orange-400: #fb923c;
+  --african-orange-500: #f97316;
+  --african-orange-600: #ea580c;
+  --african-orange-700: #c2410c;
+  --african-orange-800: #9a3412;
+  --african-orange-900: #7c2d12;
+
+  /* African Green Palette */
+  --african-green-50: #f0fdf4;
+  --african-green-100: #dcfce7;
+  --african-green-200: #bbf7d0;
+  --african-green-300: #86efac;
+  --african-green-400: #4ade80;
+  --african-green-500: #22c55e;
+  --african-green-600: #16a34a;
+  --african-green-700: #15803d;
+  --african-green-800: #166534;
+  --african-green-900: #14532d;
+
+  /* Neutral Tones */
+  --warm-white: #fefefe;
+  --cream: #fef7f0;
+  --warm-gray-50: #fafaf9;
+  --warm-gray-100: #f5f5f4;
+  --warm-gray-200: #e7e5e4;
+  --warm-gray-300: #d6d3d1;
+  --warm-gray-400: #a8a29e;
+  --warm-gray-500: #78716c;
+  --warm-gray-600: #57534e;
+  --warm-gray-700: #44403c;
+  --warm-gray-800: #292524;
+  --warm-gray-900: #1c1917;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cream);
+  color: var(--warm-gray-800);
+}
+
+/* African Pattern Background */
+.african-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(249, 115, 22, 0.02) 0%, rgba(34, 197, 94, 0.02) 100%);
+}
+
+/* Gradient Backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--african-orange-500) 0%, var(--african-green-500) 100%);
+}
+
+.gradient-bg-subtle {
+  background: linear-gradient(135deg, var(--african-orange-50) 0%, var(--african-green-50) 100%);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--african-orange-500);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid var(--african-orange-500);
+  box-shadow: 0 4px 6px rgba(249, 115, 22, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--african-orange-600);
+  border-color: var(--african-orange-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(249, 115, 22, 0.35);
+}
+
+.btn-secondary {
+  background-color: var(--african-green-500);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid var(--african-green-500);
+  box-shadow: 0 4px 6px rgba(34, 197, 94, 0.25);
+}
+
+.btn-secondary:hover {
+  background-color: var(--african-green-600);
+  border-color: var(--african-green-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(34, 197, 94, 0.35);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--african-orange-600);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid var(--african-orange-500);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--african-orange-500);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--african-green-600);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid var(--african-green-500);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--african-green-500);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--african-orange-400);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-green {
+  border-top-color: var(--african-green-400);
+}
+
+.card-orange {
+  border-top-color: var(--african-orange-400);
+}
+
+/* Form Styles */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--warm-gray-200);
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: var(--warm-white);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--african-orange-400);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--african-green-800);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--african-orange-400);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--african-green-800);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  color: var(--african-green-700);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 0 4px;
+}
+
+.nav-link:hover {
+  color: var(--african-orange-600);
+  background-color: var(--african-orange-50);
+}
+
+/* Alert Styles */
+.alert {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background-color: var(--african-green-50);
+  border-left-color: var(--african-green-500);
+  color: var(--african-green-800);
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  border-left-color: #ef4444;
+  color: #dc2626;
+}
+
+.alert-warning {
+  background-color: var(--african-orange-50);
+  border-left-color: var(--african-orange-500);
+  color: var(--african-orange-800);
+}
+
+.alert-info {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+  color: #1e40af;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  background: linear-gradient(135deg, var(--african-green-600) 0%, var(--african-green-700) 100%);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--warm-gray-100);
+}
+
+.table tbody tr:hover {
+  background-color: var(--african-orange-50);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success {
+  background-color: var(--african-green-100);
+  color: var(--african-green-800);
+}
+
+.badge-warning {
+  background-color: var(--african-orange-100);
+  color: var(--african-orange-800);
+}
+
+.badge-error {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--warm-gray-200);
+  border-top: 3px solid var(--african-orange-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-primary { color: var(--african-orange-600); }
+.text-secondary { color: var(--african-green-600); }
+.text-muted { color: var(--warm-gray-500); }
+
+.bg-primary { background-color: var(--african-orange-500); }
+.bg-secondary { background-color: var(--african-green-500); }
+.bg-light { background-color: var(--warm-gray-50); }
+
+.border-primary { border-color: var(--african-orange-400); }
+.border-secondary { border-color: var(--african-green-400); }
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* African-inspired decorative elements */
+.african-accent {
+  position: relative;
+}
+
+.african-accent::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--african-orange-500) 0%, 
+    var(--african-green-500) 33%, 
+    var(--african-orange-500) 66%, 
+    var(--african-green-500) 100%
+  );
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-secondary {
+    width: 100%;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .card {
+    margin-bottom: 16px;
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+  }
+  
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-secondary {
+    background: none !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+  
+  .african-pattern {
+    background: none !important;
+  }
+}
