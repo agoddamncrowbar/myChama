@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyChama - Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/root.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'african-orange': {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12'
+            },
+            'african-green': {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d'
+            },
+            'warm-white': '#fefefe',
+            'cream': '#fef7f0'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #f97316 0%, #22c55e 100%);
+    }
+    .african-pattern {
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+    }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body class="min-h-screen african-pattern bg-cream" style="background-image: url('assets/bg1.jpg'); background-position: center; background-size: cover;">
+
+  <!-- Hero Section -->
+  <main class="flex items-center justify-center min-h-screen px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main Welcome Card -->
+      <div class="bg-white shadow-2xl rounded-3xl p-12 mb-8 hover-lift border-t-4 border-african-orange-400">
+        <!-- Header -->
+        <header class="mb-8">
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center shadow-lg">
+              <span class="text-white font-bold text-3xl">MC</span>
+            </div>
+          </div>
+          <h1 class="text-5xl font-bold text-african-green-800 mb-4">
+            Welcome to <span class="text-african-orange-600">MyChama</span>
+          </h1>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Empowering communities through digital chama management. 
+            Connect, save, and grow together with the power of collective finance.
+          </p>
+        </header>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-6 mb-8">
+          <a href="/login"
+             class="bg-african-orange-500 hover:bg-african-orange-600 text-white px-8 py-4 rounded-xl shadow-lg text-lg font-semibold transition-all duration-300 hover-lift border-2 border-african-orange-500">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+              </svg>
+              Login to Your Account
+            </span>
+          </a>
+          <a href="/signup"
+             class="bg-african-green-500 hover:bg-african-green-600 text-white px-8 py-4 rounded-xl shadow-lg text-lg font-semibold transition-all duration-300 hover-lift border-2 border-african-green-500">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+              </svg>
+              Join Our Community
+            </span>
+          </a>
+        </div>
+
+        <!-- Feature Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div class="text-center p-6 bg-african-orange-50 rounded-2xl border-l-4 border-african-orange-400">
+            <div class="w-12 h-12 bg-african-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-african-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-african-green-800 mb-2">Community First</h3>
+            <p class="text-gray-600">Built for African communities, by Africans who understand the chama culture.</p>
+          </div>
+
+          <div class="text-center p-6 bg-african-green-50 rounded-2xl border-l-4 border-african-green-400">
+            <div class="w-12 h-12 bg-african-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-african-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-african-green-800 mb-2">Secure & Reliable</h3>
+            <p class="text-gray-600">Your financial data is protected with bank-level security and encryption.</p>
+          </div>
+
+          <div class="text-center p-6 bg-orange-50 rounded-2xl border-l-4 border-african-orange-400">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-african-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-african-green-800 mb-2">Easy to Use</h3>
+            <p class="text-gray-600">Intuitive design that makes managing your chama simple and efficient.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center">
+        <p class="text-white mb-4 ">
+          Join thousands of Kenyans already using MyChama to grow their wealth together
+        </p>
+        <div class="flex justify-center items-center space-x-2 text-sm text-gray-500">
+          <span class="flex items-center">
+            <div class="w-2 h-2 bg-african-orange-400 rounded-full mr-1"></div>
+            Trusted
+          </span>
+          <span class="flex items-center">
+            <div class="w-2 h-2 bg-african-green-400 rounded-full mr-1"></div>
+            Secure
+          </span>
+          <span class="flex items-center">
+            <div class="w-2 h-2 bg-african-orange-400 rounded-full mr-1"></div>
+            Community-driven
+          </span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-african-green-800 text-white py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex justify-center items-center mb-4">
+          <div class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center mr-2">
+            <span class="text-white font-bold">MC</span>
+          </div>
+          <span class="text-xl font-semibold">MyChama</span>
+        </div>
+        <p class="text-african-green-200">
+          Building stronger communities, one chama at a time.
+        </p>
+        <div class="mt-4 flex justify-center space-x-6">
+          <a href="#" class="text-african-green-200 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="text-african-green-200 hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="text-african-green-200 hover:text-white transition-colors">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
